@@ -1,0 +1,17 @@
+body {
+    background-color: #4287f5;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 90%;
+    padding-left: 45%;
+    padding-top: 200px;
+}
+
+button {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    width: 150px;
+}

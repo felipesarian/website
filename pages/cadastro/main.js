@@ -2,10 +2,6 @@ let users=[
     {username:'warlen', password:'123'}, {username:'felipe', password:'abc'}
 ]
 
-function signup(){
-    window.location.href='pages/cadastro/index.html'
-}
-
 function onSubmit() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;

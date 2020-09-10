@@ -10,7 +10,7 @@ function onSubmit() {
     username:username,
     password:password
   }
-  const users = JSON.parse(localStorage.getItem('users'))
+  const users = JSON.parse(localStorage.getItem('users')) ? JSON.parse(localStorage.getItem('users')) : []
   const found = users.find((user) => loginInfo.username===user.username)
   if(!found){
       alert('Usuario nao encontrado')

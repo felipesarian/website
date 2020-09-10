@@ -1,7 +1,3 @@
-let users=[
-    {username:'warlen', password:'123'}, {username:'felipe', password:'abc'}
-]
-
 function signup(){
     window.location.href='pages/cadastro/index.html'
 }
@@ -14,6 +10,7 @@ function onSubmit() {
     username:username,
     password:password
   }
+  const users = JSON.parse(localStorage.getItem('users'))
   const found = users.find((user) => loginInfo.username===user.username)
   if(!found){
       alert('Usuario nao encontrado')

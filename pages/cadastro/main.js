@@ -1,15 +1,11 @@
-let users=[
-    {username:'warlen', password:'123'}, {username:'felipe', password:'abc'}
-]
-var lista = JSON.stringify(users)
-var lista2 = JSON.parse(lista)
-
 function onSubmit() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
   var confirmpassword =  document.getElementById('confirm-password').value;
+  let users = localStorage.getItem('users') ? localStorage.getItem('users'): '[]'
+  var usersArr = JSON.parse(users)
 
-  const found = lista2.find((user) => username===user.username)
+  const found = usersArr.find((user) => username===user.username)
   if(found){
       alert('Usuario ja esta na base de dados')
       return
@@ -22,7 +18,10 @@ function onSubmit() {
       if(password.length >= 3){
 
       if(password===confirmpassword){
-          localStorage.setItem('lastname', 'smith')
+          usersArr.push({username: username, password: password})
+          localStorage.removeItem('users')
+          users = JSON.stringify(usersArr)
+          localStorage.setItem('users', users)
           alert('voce foi cadastrado')
           return
       }
